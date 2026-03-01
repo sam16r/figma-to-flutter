@@ -193,7 +193,7 @@ class _AppSettingsPageState extends State<AppSettingsPage> {
                   onChanged: (value) {
                     setState(() => _pushNotifications = value);
                   },
-                  activeColor: const Color(0xFF1E63F4),
+                  activeThumbColor: const Color(0xFF1E63F4),
                 ),
               ],
             ),
@@ -298,7 +298,7 @@ class _SettingRow extends StatelessWidget {
                   ],
                 ),
               ),
-              if (trailing != null) trailing!,
+              ?trailing,
             ],
           ),
         ),

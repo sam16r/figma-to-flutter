@@ -59,7 +59,7 @@ class _SecurityLoginPageState extends State<SecurityLoginPage> {
             trailing: Switch(
               value: _twoFactor,
               onChanged: (value) => setState(() => _twoFactor = value),
-              activeColor: const Color(0xFF9B51E0),
+              activeThumbColor: const Color(0xFF9B51E0),
             ),
             onTap: null,
           ),
@@ -71,7 +71,7 @@ class _SecurityLoginPageState extends State<SecurityLoginPage> {
             trailing: Switch(
               value: _biometricUnlock,
               onChanged: (value) => setState(() => _biometricUnlock = value),
-              activeColor: const Color(0xFF9B51E0),
+              activeThumbColor: const Color(0xFF9B51E0),
             ),
             onTap: null,
           ),

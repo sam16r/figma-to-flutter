@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:figma/pages/splash_screen.dart';
 import 'package:figma/pages/home_page.dart';
 import 'package:figma/pages/profile_page.dart';
+import 'package:figma/pages/news_page.dart';
+import 'package:figma/pages/news_detail_page.dart';
 import 'package:figma/pages/app_preferences_page.dart';
 import 'package:figma/pages/about_caretag_page.dart';
 import 'package:figma/pages/app_settings_page.dart';
@@ -33,10 +36,13 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'SF Pro Display',
       ),
-      initialRoute: HomePage.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
+        SplashScreen.routeName: (context) => const SplashScreen(),
         HomePage.routeName: (context) => const HomePage(),
         ProfilePage.routeName: (context) => const ProfilePage(),
+        NewsPage.routeName: (context) => const NewsPage(),
+        NewsDetailPage.routeName: (context) => const NewsDetailPage(),
         AppPreferencesPage.routeName: (context) => const AppPreferencesPage(),
         AboutCareTagPage.routeName: (context) => const AboutCareTagPage(),
         AppSettingsPage.routeName: (context) => const AppSettingsPage(),

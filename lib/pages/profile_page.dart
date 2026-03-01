@@ -392,11 +392,19 @@ class _BottomNavBar extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
-          _NavItem(icon: Icons.home_outlined, label: 'Home'),
+        children: [
+          _NavItem(
+            icon: Icons.home_outlined, 
+            label: 'Home',
+            onTap: () => Navigator.pushReplacementNamed(context, '/'),
+          ),
           _NavItem(icon: Icons.assignment_outlined, label: 'Records'),
           _NavItem(icon: Icons.account_balance_outlined, label: 'My Care'),
-          _NavItem(icon: Icons.description_outlined, label: 'News'),
+          _NavItem(
+            icon: Icons.description_outlined, 
+            label: 'News',
+            onTap: () => Navigator.pushReplacementNamed(context, '/news'),
+          ),
           _NavItem(icon: Icons.person, label: 'Profile', active: true),
         ],
       ),
@@ -409,41 +417,47 @@ class _NavItem extends StatelessWidget {
     required this.icon,
     required this.label,
     this.active = false,
+    this.onTap,
   });
 
   final IconData icon;
   final String label;
   final bool active;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final color = active ? const Color(0xFF1E63F4) : const Color(0xFF6B7280);
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        if (active)
-          Container(
-            width: 26,
-            height: 3,
-            margin: const EdgeInsets.only(bottom: 8),
-            decoration: BoxDecoration(
-              color: const Color(0xFF1E63F4),
-              borderRadius: BorderRadius.circular(12),
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (active)
+            Container(
+              width: 26,
+              height: 3,
+              margin: const EdgeInsets.only(bottom: 8),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1E63F4),
+                borderRadius: BorderRadius.circular(12),
+              ),
+            )
+          else
+            const SizedBox(height: 11),
+          Icon(icon, color: color, size: 22),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: active ? FontWeight.w700 : FontWeight.w500,
+              color: color,
             ),
-          )
-        else
-          const SizedBox(height: 11),
-        Icon(icon, color: color, size: 22),
-        const SizedBox(height: 2),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: active ? FontWeight.w700 : FontWeight.w500,
-            color: color,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

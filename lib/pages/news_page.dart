@@ -186,9 +186,11 @@ class _NewsPageState extends State<NewsPage> {
                             Navigator.pushNamed(
                               context,
                               '/news-detail',
-                              arguments: dummyNewsArticles.firstWhere(
-                                (a) => a.isFeatured,
-                              ),
+                              arguments: {
+                                'article': dummyNewsArticles.firstWhere(
+                                  (a) => a.isFeatured,
+                                ),
+                              },
                             );
                           },
                         ),
@@ -216,7 +218,7 @@ class _NewsPageState extends State<NewsPage> {
                                   Navigator.pushNamed(
                                     context,
                                     '/news-detail',
-                                    arguments: article,
+                                    arguments: {'article': article},
                                   );
                                 },
                               ),

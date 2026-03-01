@@ -30,7 +30,8 @@ final List<NewsArticle> dummyNewsArticles = [
     author: 'Dr. Sarah Jenkins',
     timeAgo: 'Just now',
     readTime: '5 min read',
-    imageUrl: 'assets/images/sleep_quality.jpg', // Placeholder, we will use a color/dummy image
+    imageUrl:
+        'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop',
     isFeatured: true,
   ),
   const NewsArticle(
@@ -39,8 +40,9 @@ final List<NewsArticle> dummyNewsArticles = [
     title: 'Superfoods You Need to Include in Your Diet',
     author: 'CareTag Editorial',
     timeAgo: '2h ago',
-    readTime: '4 min read',
-    imageUrl: 'assets/images/superfoods.jpg',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop',
   ),
   const NewsArticle(
     id: '3',
@@ -48,8 +50,9 @@ final List<NewsArticle> dummyNewsArticles = [
     title: 'Why Mindfulness Matters in a Busy World',
     author: 'eHealth Weekly',
     timeAgo: '5h ago',
-    readTime: '6 min read',
-    imageUrl: 'assets/images/mindfulness.jpg',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop',
   ),
   const NewsArticle(
     id: '4',
@@ -57,8 +60,9 @@ final List<NewsArticle> dummyNewsArticles = [
     title: '5 Simple Exercises for Lower Back Pain',
     author: 'Physio Tips',
     timeAgo: '8h ago',
-    readTime: '3 min read',
-    imageUrl: 'assets/images/lower_back.jpg',
+    readTime: '15 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop',
   ),
   const NewsArticle(
     id: '5',
@@ -67,6 +71,7 @@ final List<NewsArticle> dummyNewsArticles = [
     author: 'Tech eHealth',
     timeAgo: '1d ago',
     readTime: '5 min read',
-    imageUrl: 'assets/images/hydration.jpg',
+    imageUrl:
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop',
   ),
 ];

@@ -8,40 +8,105 @@ class MindfulnessDetail extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Title
+        const Text(
+          'Find Your Center',
+          style: TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFF111827),
+            height: 1.2,
+          ),
+        ),
+        const SizedBox(height: 8),
+
+        // Subtitle
+        const Text(
+          'Why mindfulness is the antidote to modern chaos.',
+          style: TextStyle(fontSize: 15, height: 1.4, color: Color(0xFF6B7280)),
+        ),
+        const SizedBox(height: 16),
+
+        // Author row with Follow button
+        Row(
+          children: [
+            CircleAvatar(
+              radius: 18,
+              backgroundColor: Colors.grey[300],
+              child: const Icon(Icons.person, color: Colors.white, size: 18),
+            ),
+            const SizedBox(width: 10),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Dr. Sarah Jenkins',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF111827),
+                    ),
+                  ),
+                  Text(
+                    'Neuroscience PhD',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF6B7280)),
+                  ),
+                ],
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                backgroundColor: const Color(0xFFEFF6FF),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              child: const Text(
+                'Follow',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF1E63F4),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        const Divider(color: Color(0xFFF3F4F6)),
+        const SizedBox(height: 20),
+
+        // Body
         RichText(
           text: const TextSpan(
             style: TextStyle(
               fontSize: 16,
               height: 1.6,
               color: Color(0xFF4B5563),
-              fontFamily: 'SF Pro Display',
             ),
             children: [
-              TextSpan(text: 'In a world that never stops buzzing, finding a moment of silence can feel like\n'),
-              TextSpan(text: 'a rebellious act. But recent neurological\n'),
-              TextSpan(text: 'studies suggest that it might be the most productive thing you do all day.'),
+              TextSpan(
+                text:
+                    'In a world that never stops buzzing, finding a moment of silence can feel like a rebellious act. But recent neurological studies suggest that it might be the most productive thing you do all day.',
+              ),
             ],
           ),
         ),
         const SizedBox(height: 20),
-        
-        RichText(
-          text: const TextSpan(
-            style: TextStyle(
-              fontSize: 16,
-              height: 1.6,
-              color: Color(0xFF4B5563),
-              fontFamily: 'SF Pro Display',
-            ),
-            children: [
-              TextSpan(text: 'When we are stressed, our amygdala—the brain\'s fear center—becomes hyperactive. This "fight or flight" response was useful for our ancestors running from predators, but less helpful\n'),
-              TextSpan(text: 'when you\'re just trying to answer emails.'),
-            ],
-          ),
+
+        const Text(
+          "When we are stressed, our amygdala—the brain's fear center—becomes hyperactive. This \"fight or flight\" response was useful for our ancestors running from predators, but less helpful when you're just trying to answer emails.",
+          style: TextStyle(fontSize: 16, height: 1.6, color: Color(0xFF4B5563)),
         ),
-        
+
         const SizedBox(height: 32),
-        
+
         // The Science of Stillness Card
         Container(
           padding: const EdgeInsets.all(24),
@@ -50,10 +115,7 @@ class MindfulnessDetail extends StatelessWidget {
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                Color(0xFFF3E8FF), // Light purple
-                Color(0xFFFDF4FF), // Lighter pink/purple
-              ],
+              colors: [Color(0xFFF3E8FF), Color(0xFFFDF4FF)],
             ),
           ),
           child: Column(
@@ -78,10 +140,10 @@ class MindfulnessDetail extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Row(
-                children: [
-                  const Icon(Icons.verified, color: Color(0xFF9333EA), size: 16),
-                  const SizedBox(width: 8),
-                  const Text(
+                children: const [
+                  Icon(Icons.verified, color: Color(0xFF9333EA), size: 16),
+                  SizedBox(width: 8),
+                  Text(
                     'Source: CareTag Medical Review Board',
                     style: TextStyle(
                       fontSize: 12,
@@ -94,20 +156,16 @@ class MindfulnessDetail extends StatelessWidget {
             ],
           ),
         ),
-        
+
         const SizedBox(height: 32),
-        
+
         const Text(
-          'It doesn\'t require hours of chanting. Even sixty seconds of intentional breathing can reset your nervous system.',
-          style: TextStyle(
-            fontSize: 16,
-            height: 1.6,
-            color: Color(0xFF4B5563),
-          ),
+          "It doesn't require hours of chanting. Even sixty seconds of intentional breathing can reset your nervous system.",
+          style: TextStyle(fontSize: 16, height: 1.6, color: Color(0xFF4B5563)),
         ),
-        
+
         const SizedBox(height: 32),
-        
+
         // Guided Breath Component
         Container(
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
@@ -127,8 +185,8 @@ class MindfulnessDetail extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 32),
-              
-              // Breath Circle Visualization
+
+              // Breath Circle
               Container(
                 height: 140,
                 width: 140,
@@ -152,32 +210,39 @@ class MindfulnessDetail extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Colors.white,
                         ),
-                        child: const Icon(Icons.air, color: Color(0xFF9333EA), size: 30),
+                        child: const Icon(
+                          Icons.air,
+                          color: Color(0xFF9333EA),
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               const Text(
-                'Inhale for 4s • Hold for 4s • Exhale for 4s',
+                'Inhale for 4s  •  Hold for 4s  •  Exhale for 4s',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   color: Color(0xFF4B5563),
                 ),
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFA855F7),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 32,
+                    vertical: 12,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -190,25 +255,21 @@ class MindfulnessDetail extends StatelessWidget {
             ],
           ),
         ),
-        
+
         const SizedBox(height: 32),
-        
+
         const Text(
           'By consciously regulating your breath, you send a signal to your vagus nerve that you are safe. This simple biological hack is accessible to everyone, anywhere, at any time.',
-          style: TextStyle(
-            fontSize: 16,
-            height: 1.6,
-            color: Color(0xFF4B5563),
-          ),
+          style: TextStyle(fontSize: 16, height: 1.6, color: Color(0xFF4B5563)),
         ),
-        
+
         const SizedBox(height: 24),
-        
+
         // Well Done Banner
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           decoration: BoxDecoration(
-            color: const Color(0xFF6366F1), // Indigo
+            color: const Color(0xFF6366F1),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -219,7 +280,11 @@ class MindfulnessDetail extends StatelessWidget {
                   color: Colors.white.withOpacity(0.2),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.star, color: Color(0xFFFBBF24), size: 16),
+                child: const Icon(
+                  Icons.star,
+                  color: Color(0xFFFBBF24),
+                  size: 16,
+                ),
               ),
               const SizedBox(width: 16),
               const Expanded(
@@ -235,23 +300,23 @@ class MindfulnessDetail extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'You\'ve earned 5 CarePoints for reading.',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
+                      "You've earned 5 CarePoints for reading.",
+                      style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: 12),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white.withOpacity(0.2),
                   foregroundColor: Colors.white,
                   elevation: 0,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -264,9 +329,9 @@ class MindfulnessDetail extends StatelessWidget {
             ],
           ),
         ),
-        
+
         const SizedBox(height: 32),
-        
+
         const Text(
           'Read Next',
           style: TextStyle(
@@ -276,7 +341,7 @@ class MindfulnessDetail extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        
+
         // Read Next Card
         Row(
           children: [
@@ -287,7 +352,9 @@ class MindfulnessDetail extends StatelessWidget {
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
-                  image: NetworkImage('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop'),
+                  image: NetworkImage(
+                    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&auto=format&fit=crop',
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -307,11 +374,8 @@ class MindfulnessDetail extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Wellness • 5 min read',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF6B7280),
-                    ),
+                    'Wellness  ·  5 min read',
+                    style: TextStyle(fontSize: 12, color: Color(0xFF6B7280)),
                   ),
                 ],
               ),

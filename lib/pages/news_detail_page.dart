@@ -13,32 +13,31 @@ class NewsDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Extract the arguments from the current ModalRoute
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?;
-    
-    // Default or empty article if arguments are missing
-    final article = args?['article'] as NewsArticle? ?? 
-      NewsArticle(
-        id: '0', 
-        title: 'Error Loading Article', 
-        author: 'Unknown', 
-        category: 'Error', 
-        timeAgo: 'Just now', 
-        readTime: '0 min', 
-        imageUrl: 'https://via.placeholder.com/400x300', 
-        isFeatured: false, 
-        content: 'Could not load article content.'
-      );
+    final args =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>?;
+
+    final article =
+        args?['article'] as NewsArticle? ??
+        const NewsArticle(
+          id: '0',
+          title: 'Error Loading Article',
+          author: 'Unknown',
+          category: 'Error',
+          timeAgo: 'Just now',
+          readTime: '0 min',
+          imageUrl: '',
+        );
 
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
-          // Custom App Bar with Image
+          // Hero App Bar with Image
           SliverAppBar(
             expandedHeight: 300.0,
             floating: false,
             pinned: true,
+            backgroundColor: Colors.white,
             leading: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -75,15 +74,20 @@ class NewsDetailPage extends StatelessWidget {
                     ],
                   ),
                   child: IconButton(
-                    icon: const Icon(Icons.bookmark_border, color: Color(0xFF111827)),
-                    onPressed: () {
-                      // Save article function
-                    },
+                    icon: const Icon(
+                      Icons.bookmark_border,
+                      color: Color(0xFF111827),
+                    ),
+                    onPressed: () {},
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 16.0, top: 8.0, bottom: 8.0),
+                padding: const EdgeInsets.only(
+                  right: 16.0,
+                  top: 8.0,
+                  bottom: 8.0,
+                ),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -97,10 +101,11 @@ class NewsDetailPage extends StatelessWidget {
                     ],
                   ),
                   child: IconButton(
-                    icon: const Icon(Icons.share_outlined, color: Color(0xFF111827)),
-                    onPressed: () {
-                      // Share function
-                    },
+                    icon: const Icon(
+                      Icons.share_outlined,
+                      color: Color(0xFF111827),
+                    ),
+                    onPressed: () {},
                   ),
                 ),
               ),
@@ -109,33 +114,65 @@ class NewsDetailPage extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.network(
-                    article.imageUrl,
-                    fit: BoxFit.cover,
-                  ),
-                  // Gradient overlay for better text/icon visibility if needed
+                  // Hero Image
+                  article.imageUrl.isNotEmpty
+                      ? Image.network(
+                          article.imageUrl,
+                          fit: BoxFit.cover,
+                          errorBuilder: (_, __, ___) =>
+                              Container(color: const Color(0xFFE5E7EB)),
+                        )
+                      : Container(color: const Color(0xFFE5E7EB)),
+
+                  // Gradient overlay
                   DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.black.withOpacity(0.3),
+                          Colors.black.withOpacity(0.25),
                           Colors.transparent,
-                          Colors.black.withOpacity(0.3),
+                          Colors.black.withOpacity(0.25),
                         ],
                       ),
                     ),
                   ),
+
+                  // Hero tag overlay (for articles 2, 3, 4)
+                  if (_heroTag(article) != null)
+                    Positioned(
+                      bottom: 40,
+                      left: 20,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: _heroTagColor(article),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Text(
+                          _heroTag(article)!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),
           ),
-          
-          // Article Content Body
+
+          // Article Content
           SliverToBoxAdapter(
             child: Transform.translate(
-              offset: const Offset(0, -24), // Pull up over the image
+              offset: const Offset(0, -24),
               child: Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -144,99 +181,8 @@ class NewsDetailPage extends StatelessWidget {
                     topRight: Radius.circular(32),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Category tag
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFEFF6FF), // Light blue
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Text(
-                          article.category.toUpperCase(),
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1,
-                            color: Color(0xFF3B82F6), // Blue
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      
-                      // Title
-                      Text(
-                        article.title,
-                        style: const TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xFF111827),
-                          height: 1.2,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      
-                      // Author and Meta Info
-                      Row(
-                        children: [
-                          // Author Avatar
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFF3E8FF), // Light purple
-                              shape: BoxShape.circle,
-                              border: Border.all(color: const Color(0xFFE9D5FF), width: 2),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'CT',
-                                style: TextStyle(
-                                  color: Color(0xFF9333EA),
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 12),
-                          // Author Details
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                article.author,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xFF111827),
-                                ),
-                              ),
-                              Text(
-                                '${article.timeAgo} • ${article.readTime}',
-                                style: const TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xFF6B7280),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 24),
-                      const Divider(color: Color(0xFFF3F4F6)),
-                      const SizedBox(height: 24),
-                      
-                      // Specific Article Content
-                      _buildArticleContent(article),
-                    ],
-                  ),
-                ),
+                padding: const EdgeInsets.fromLTRB(24, 28, 24, 40),
+                child: _buildContent(article),
               ),
             ),
           ),
@@ -245,27 +191,53 @@ class NewsDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _buildArticleContent(NewsArticle article) {
-    if (article.title.contains('Sleep Quality')) {
-      return const SleepQualityDetail();
-    } else if (article.title.contains('Superfoods')) {
-      return const SuperfoodsDetail();
-    } else if (article.title.contains('Find Your Center')) {
-      return const MindfulnessDetail();
-    } else if (article.title.contains('5 Simple Exercises')) {
-      return const ExercisesDetail();
-    } else if (article.title.contains('Smart HydraSense')) {
-      return const SmartHydrasenseDetail();
-    } else {
-      // Fallback
-      return Text(
-        article.content,
-        style: const TextStyle(
-          fontSize: 16,
-          height: 1.6,
-          color: Color(0xFF4B5563),
-        ),
-      );
+  String? _heroTag(NewsArticle article) {
+    switch (article.id) {
+      case '2':
+        return 'NUTRITION';
+      case '3':
+        return 'MENTAL HEALTH · 5 min read';
+      case '4':
+        return 'PHYSICAL THERAPY · 15 min';
+      default:
+        return null;
+    }
+  }
+
+  Color _heroTagColor(NewsArticle article) {
+    switch (article.id) {
+      case '2':
+        return const Color(0xFF10B981); // green
+      case '3':
+        return const Color(0xFF3B82F6); // blue
+      case '4':
+        return const Color(0xFF10B981); // green
+      default:
+        return const Color(0xFF1E63F4);
+    }
+  }
+
+  Widget _buildContent(NewsArticle article) {
+    switch (article.id) {
+      case '1':
+        return const SleepQualityDetail();
+      case '2':
+        return const SuperfoodsDetail();
+      case '3':
+        return const MindfulnessDetail();
+      case '4':
+        return const ExercisesDetail();
+      case '5':
+        return const SmartHydrasenseDetail();
+      default:
+        return Text(
+          article.content.isNotEmpty ? article.content : 'Content coming soon.',
+          style: const TextStyle(
+            fontSize: 16,
+            height: 1.6,
+            color: Color(0xFF4B5563),
+          ),
+        );
     }
   }
 }

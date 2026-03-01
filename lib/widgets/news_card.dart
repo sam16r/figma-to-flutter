@@ -5,11 +5,7 @@ class NewsCard extends StatelessWidget {
   final NewsArticle article;
   final VoidCallback onTap;
 
-  const NewsCard({
-    super.key,
-    required this.article,
-    required this.onTap,
-  });
+  const NewsCard({super.key, required this.article, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +87,11 @@ class NewsCard extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 8),
-                      const Icon(Icons.circle, color: Color(0xFFD1D5DB), size: 3),
+                      const Icon(
+                        Icons.circle,
+                        color: Color(0xFFD1D5DB),
+                        size: 3,
+                      ),
                       const SizedBox(width: 8),
                       Text(
                         article.timeAgo,
@@ -106,9 +106,9 @@ class NewsCard extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             const SizedBox(width: 16),
-            
+
             // Right image thumbnail
             Container(
               height: 80,
@@ -118,8 +118,12 @@ class NewsCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               clipBehavior: Clip.antiAlias,
-              // Replace with actual asset image once available
-              // child: Image.asset(article.imageUrl, fit: BoxFit.cover),
+              child: Image.network(
+                article.imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) =>
+                    Container(color: placeholderColor),
+              ),
             ),
           ],
         ),

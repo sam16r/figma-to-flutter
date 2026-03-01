@@ -8,27 +8,81 @@ class SuperfoodsDetail extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Title
         const Text(
-          'Incorporating these nutritional powerhouses into your daily routine can boost energy, improve focus, and strengthen your immune system naturally.',
+          'Superfoods You Need to Include in Your Diet',
           style: TextStyle(
-            fontSize: 16,
-            height: 1.6,
-            color: Color(0xFF4B5563),
+            fontSize: 26,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFF111827),
+            height: 1.2,
           ),
         ),
+        const SizedBox(height: 14),
+
+        // Author row
+        Row(
+          children: [
+            Container(
+              height: 32,
+              width: 32,
+              decoration: const BoxDecoration(
+                color: Color(0xFFFFEDD5),
+                shape: BoxShape.circle,
+              ),
+              child: const Center(
+                child: Text(
+                  'CT',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFFF97316),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'By CareTag Editorial',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF111827),
+              ),
+            ),
+            const SizedBox(width: 8),
+            const Text(
+              '·',
+              style: TextStyle(color: Color(0xFF9CA3AF), fontSize: 13),
+            ),
+            const SizedBox(width: 8),
+            const Text(
+              '5 min read',
+              style: TextStyle(fontSize: 13, color: Color(0xFF9CA3AF)),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        const Divider(color: Color(0xFFF3F4F6)),
+        const SizedBox(height: 20),
+
+        // Intro
+        const Text(
+          'Incorporating these nutritional powerhouses into your daily routine can boost energy, improve focus, and strengthen your immune system naturally.',
+          style: TextStyle(fontSize: 16, height: 1.6, color: Color(0xFF4B5563)),
+        ),
         const SizedBox(height: 32),
-        
+
         const Text(
           'Top 5 Powerhouses',
           style: TextStyle(
             fontSize: 20,
-            fontWeight: 
-            FontWeight.w800,
+            fontWeight: FontWeight.w800,
             color: Color(0xFF111827),
           ),
         ),
         const SizedBox(height: 20),
-        
+
         _buildFoodCard(
           icon: Icons.water_drop_outlined,
           iconColor: const Color(0xFF3B82F6),
@@ -37,9 +91,10 @@ class SuperfoodsDetail extends StatelessWidget {
           tagLabel: 'Antioxidants',
           tagColor: const Color(0xFF3B82F6),
           tagBgColor: const Color(0xFFEFF6FF),
-          description: 'Packed with antioxidants that protect your cells from damage. They are known to improve memory and cognitive function over time.',
+          description:
+              'Packed with antioxidants that protect your cells from damage. They are known to improve memory and cognitive function over time.',
         ),
-        
+
         _buildFoodCard(
           icon: Icons.opacity,
           iconColor: const Color(0xFFF97316),
@@ -48,9 +103,10 @@ class SuperfoodsDetail extends StatelessWidget {
           tagLabel: 'Omega-3',
           tagColor: const Color(0xFFF97316),
           tagBgColor: const Color(0xFFFFF7ED),
-          description: 'Rich in omega-3 fatty acids essential for heart and brain health. Regular consumption can lower blood pressure and reduce inflammation.',
+          description:
+              'Rich in omega-3 fatty acids essential for heart and brain health. Regular consumption can lower blood pressure and reduce inflammation.',
         ),
-        
+
         _buildFoodCard(
           icon: Icons.eco_outlined,
           iconColor: const Color(0xFF10B981),
@@ -59,9 +115,10 @@ class SuperfoodsDetail extends StatelessWidget {
           tagLabel: 'Vitamin K',
           tagColor: const Color(0xFF10B981),
           tagBgColor: const Color(0xFFECFDF5),
-          description: 'A nutrient-dense leafy green loaded with Vitamin K, A, and C. It supports bone health and boosts your body\'s detoxification processes.',
+          description:
+              "A nutrient-dense leafy green loaded with Vitamin K, A, and C. It supports bone health and boosts your body's detoxification processes.",
         ),
-        
+
         _buildFoodCard(
           icon: Icons.spa_outlined,
           iconColor: const Color(0xFFD97706),
@@ -70,9 +127,10 @@ class SuperfoodsDetail extends StatelessWidget {
           tagLabel: 'Brain Health',
           tagColor: const Color(0xFFD97706),
           tagBgColor: const Color(0xFFFFFBEB),
-          description: 'The ultimate brain food, containing healthy fats and polyphenols. Studies suggest they may improve memory and reduce anxiety.',
+          description:
+              'The ultimate brain food, containing healthy fats and polyphenols. Studies suggest they may improve memory and reduce anxiety.',
         ),
-        
+
         _buildFoodCard(
           icon: Icons.healing,
           iconColor: const Color(0xFFEAB308),
@@ -81,7 +139,8 @@ class SuperfoodsDetail extends StatelessWidget {
           tagLabel: 'Anti-inflammatory',
           tagColor: const Color(0xFFEAB308),
           tagBgColor: const Color(0xFFFEFCE8),
-          description: 'Contains curcumin, a potent anti-inflammatory compound. It aids in digestion and helps alleviate joint pain naturally.',
+          description:
+              'Contains curcumin, a potent anti-inflammatory compound. It aids in digestion and helps alleviate joint pain naturally.',
         ),
       ],
     );
@@ -138,9 +197,12 @@ class SuperfoodsDetail extends StatelessWidget {
                         color: Color(0xFF111827),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 10),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
                       decoration: BoxDecoration(
                         color: tagBgColor,
                         borderRadius: BorderRadius.circular(8),

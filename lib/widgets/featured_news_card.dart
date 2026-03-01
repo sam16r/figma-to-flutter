@@ -23,9 +23,8 @@ class FeaturedNewsCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.grey[300], // Placeholder color
-          image: const DecorationImage(
-            // Use network image placeholder for testing if asset doesn't exist
-            image: NetworkImage('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop'),
+          image: DecorationImage(
+            image: NetworkImage(article.imageUrl),
             fit: BoxFit.cover,
           ),
           boxShadow: [
@@ -42,10 +41,7 @@ class FeaturedNewsCard extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [
-                Colors.transparent,
-                Colors.black.withOpacity(0.8),
-              ],
+              colors: [Colors.transparent, Colors.black.withOpacity(0.8)],
             ),
           ),
           padding: const EdgeInsets.all(20),
@@ -55,7 +51,10 @@ class FeaturedNewsCard extends StatelessWidget {
             children: [
               // Featured Badge
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF1E63F4), // Blue
                   borderRadius: BorderRadius.circular(12),
@@ -70,7 +69,7 @@ class FeaturedNewsCard extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               // Article Info
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +86,11 @@ class FeaturedNewsCard extends StatelessWidget {
                   const SizedBox(height: 12),
                   Row(
                     children: [
-                      const Icon(Icons.access_time, color: Colors.white70, size: 14),
+                      const Icon(
+                        Icons.access_time,
+                        color: Colors.white70,
+                        size: 14,
+                      ),
                       const SizedBox(width: 4),
                       Text(
                         article.readTime,

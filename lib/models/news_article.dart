@@ -387,6 +387,131 @@ final List<NewsArticle> medicinesArticles = [
   ),
 ];
 
+// Medical Technology Tab Articles
+final List<NewsArticle> techArticles = [
+  const NewsArticle(
+    id: 'tech1',
+    category: 'MEDICAL TECH',
+    title: 'AI in Early Cancer Detection',
+    subtitle:
+        'New algorithms demonstrate 99% accuracy in identifying anomalies weeks before traditional scans.',
+    author: 'Dr. Emily Chen',
+    timeAgo: '2h ago',
+    readTime: '6 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&fit=crop',
+    isFeatured: true,
+  ),
+  const NewsArticle(
+    id: 'tech2',
+    category: 'INNOVATION',
+    title: 'Solid-State Power: The Future of Wearable Battery Life',
+    subtitle:
+        'Next-generation solid-state batteries promise 7-day continuous monitoring and flash charging.',
+    author: 'CareTag Research',
+    timeAgo: '3h ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech3',
+    category: 'DATA SCIENCE',
+    title: 'Understanding AI Precision in Diagnostics',
+    subtitle:
+        'How neural networks are outperforming traditional methods in specific medical fields.',
+    author: 'CareTag Editorial',
+    timeAgo: '5h ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1576319155264-99536e0be1ee?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech4',
+    category: 'SECURITY',
+    title: 'Military-Grade Security for Your Health Data',
+    subtitle:
+        'AES-256 encryption, end-to-end vaulting, and zero-knowledge architecture explained.',
+    author: 'CareTag Security',
+    timeAgo: '8h ago',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech5',
+    category: 'ONCOLOGY & AI',
+    title: 'AI in Early Detection: Enhancing Diagnostic Accuracy in Oncology',
+    subtitle:
+        'Clinical trial findings: CNN trained on 45,000 histopathological images outperforms radiologists.',
+    author: 'Dr. Sarah Jennings, et al.',
+    timeAgo: 'Oct 14, 2023',
+    readTime: '8 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech6',
+    category: 'WEARABLES',
+    title: 'Wearable Sensors: The Next Frontier',
+    subtitle:
+        'Ultra-thin smart patches adhere directly to the epidermis for continuous multi-vital monitoring.',
+    author: 'Dr. Aris Thorne',
+    timeAgo: '1d ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech7',
+    category: 'SURGERY',
+    title: 'Robotic-Assisted Surgery Breakthroughs',
+    subtitle:
+        'Sub-millimeter precision and remote capabilities are redefining what is possible in the OR.',
+    author: 'Dr. Sarah Jenkins',
+    timeAgo: '1d ago',
+    readTime: '8 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech8',
+    category: 'INDUSTRY DATA',
+    title: 'Telehealth Trends for 2025',
+    subtitle:
+        'As virtual-first healthcare becomes foundational, AI triaging is reducing misdiagnoses by 18%.',
+    author: 'James P. Miller',
+    timeAgo: '2d ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech9',
+    category: 'BIOTECH',
+    title: '3D Printed Organs: From Lab to Clinic',
+    subtitle:
+        'How bioprinting technology is moving beyond experimental scaffolds to functional, life-saving tissues.',
+    author: 'Dr. Elena Rostova',
+    timeAgo: '3d ago',
+    readTime: '9 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'tech10',
+    category: 'CONNECTIVITY',
+    title: 'Tele-Surgery via 5G: A Success Story',
+    subtitle:
+        'A surgeon in London performed a successful procedure on a patient 6,700 miles away.',
+    author: 'Dr. Elena Vance',
+    timeAgo: '4d ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&auto=format&fit=crop',
+  ),
+];
+
 // Alerts & Safety Tab Articles
 final List<NewsArticle> alertsArticles = [
   const NewsArticle(

@@ -13,6 +13,10 @@ import 'package:figma/pages/mental_wellness_details/peer_support_page.dart';
 import 'package:figma/pages/medicines_treatments_detail_page.dart';
 import 'package:figma/pages/fda_drug_updates_page.dart';
 import 'package:figma/pages/pharmacist_qa_page.dart';
+import 'package:figma/pages/medical_technology_detail_page.dart';
+import 'package:figma/pages/caretag_pro_page.dart';
+import 'package:figma/pages/cgm_device_page.dart';
+import 'package:figma/pages/beta_lab_page.dart';
 import 'package:figma/pages/app_preferences_page.dart';
 import 'package:figma/pages/about_caretag_page.dart';
 import 'package:figma/pages/app_settings_page.dart';
@@ -67,6 +71,11 @@ class MyApp extends StatelessWidget {
         FdaDrugUpdatesPage.routeName: (context) =>
             const FdaDrugUpdatesPage(),
         PharmacistQaPage.routeName: (context) => const PharmacistQaPage(),
+        MedicalTechnologyDetailPage.routeName: (context) =>
+            const MedicalTechnologyDetailPage(),
+        CareTagProPage.routeName: (context) => const CareTagProPage(),
+        CgmDevicePage.routeName: (context) => const CgmDevicePage(),
+        BetaLabPage.routeName: (context) => const BetaLabPage(),
         AppPreferencesPage.routeName: (context) => const AppPreferencesPage(),
         AboutCareTagPage.routeName: (context) => const AboutCareTagPage(),
         AppSettingsPage.routeName: (context) => const AppSettingsPage(),

@@ -78,6 +78,113 @@ final List<NewsArticle> dummyNewsArticles = [
   ),
 ];
 
+// Diseases & Awareness Tab Articles
+final List<NewsArticle> diseasesArticles = [
+  const NewsArticle(
+    id: 'da1',
+    category: 'AWARENESS MONTH',
+    title: 'Breast Cancer Awareness',
+    subtitle:
+        'Early detection saves lives. Learn about self-examination and screening schedules.',
+    author: 'CareTag Editorial',
+    timeAgo: 'Just now',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop',
+    isFeatured: true,
+  ),
+  const NewsArticle(
+    id: 'da2',
+    category: 'CHRONIC',
+    title: 'Understanding Diabetes',
+    subtitle:
+        'Learn the critical differences between Type 1 and Type 2 symptoms and management.',
+    author: 'CareTag Editorial',
+    timeAgo: '2h ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da3',
+    category: 'CARDIOLOGY',
+    title: 'Heart Health Essentials',
+    subtitle:
+        '5 common warning signs of hypertension you should not ignore.',
+    author: 'CareTag Editorial',
+    timeAgo: '5h ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da4',
+    category: 'SEASONAL',
+    title: 'Allergy Prep Guide',
+    subtitle: 'How to effectively prepare for the upcoming spring pollen season.',
+    author: 'CareTag Editorial',
+    timeAgo: '8h ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da5',
+    category: 'CLINICAL TRIALS',
+    title: 'New Alzheimer\'s Study',
+    subtitle: 'Promising results from phase 3 clinical trials.',
+    author: 'Journal of Clinical Neurology',
+    timeAgo: '2h ago',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1576319155264-99536e0be1ee?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da6',
+    category: 'BREAKTHROUGH',
+    title: 'Gene Therapy Update',
+    subtitle: 'FDA approves new treatment for sickle cell.',
+    author: 'CareTag Research',
+    timeAgo: '1d ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da7',
+    category: 'SELF-SCREENING',
+    title: 'Skin Mole Check',
+    subtitle: 'ABCDE method',
+    author: 'CareTag Editorial',
+    timeAgo: '3d ago',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da8',
+    category: 'SELF-SCREENING',
+    title: 'Breast Self-Exam',
+    subtitle: 'Monthly check',
+    author: 'CareTag Editorial',
+    timeAgo: '3d ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'da9',
+    category: 'EXPERT INSIGHTS',
+    title: 'Managing Chronic Pain',
+    subtitle: 'Dr. Emily Chen explains new holistic approaches.',
+    author: 'Dr. Emily Chen, MD',
+    timeAgo: '1d ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1537274942065-eda9d00a6293?w=800&auto=format&fit=crop',
+  ),
+];
+
 // Health Tips Tab Articles
 final List<NewsArticle> healthTipsArticles = [
   const NewsArticle(

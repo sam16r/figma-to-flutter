@@ -3,6 +3,7 @@ import '../widgets/featured_news_card.dart';
 import '../widgets/news_card.dart';
 import '../models/news_article.dart';
 import 'health_tips_content.dart';
+import 'diseases_awareness_content.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -231,7 +232,9 @@ class _NewsPageState extends State<NewsPage> {
                   )
                 : _selectedCategoryIndex == 1
                     ? const HealthTipsContent()
-                    : Center(
+                    : _selectedCategoryIndex == 2
+                        ? const DiseasesAwarenessContent()
+                        : Center(
                         child: Text(
                           '${_categories[_selectedCategoryIndex].replaceAll('\n', ' ')} Content Here',
                         ),

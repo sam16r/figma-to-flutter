@@ -262,6 +262,47 @@ final List<NewsArticle> healthTipsArticles = [
   ),
 ];
 
+// Mental Wellness Tab Articles
+final List<NewsArticle> mentalWellnessArticles = [
+  const NewsArticle(
+    id: 'mw1',
+    category: 'MINDFULNESS',
+    title: 'The Science of Mindfulness',
+    subtitle:
+        'Recent neurological studies confirm what monks have known for centuries: meditation restructures the brain.',
+    author: 'Dr. Elena Rossi',
+    timeAgo: '5 min read',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop',
+    isFeatured: true,
+  ),
+  const NewsArticle(
+    id: 'mw2',
+    category: 'SELF CARE',
+    title: 'Burnout: Recognizing the Early Signs',
+    subtitle:
+        'Feeling exhausted isn\'t the only symptom. Learn the emotional cues that matter most.',
+    author: 'Dr. Elena Rossi',
+    timeAgo: '4 min read',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mw3',
+    category: 'SLEEP HEALTH',
+    title: 'Sleep Hygiene for Better Mood Regulation',
+    subtitle:
+        'Why your sleep environment matters more than you think for emotional wellbeing.',
+    author: 'CareTag Editorial',
+    timeAgo: '3 min read',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&auto=format&fit=crop',
+  ),
+];
+
 // Alerts & Safety Tab Articles
 final List<NewsArticle> alertsArticles = [
   const NewsArticle(

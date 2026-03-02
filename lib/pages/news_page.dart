@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/featured_news_card.dart';
 import '../widgets/news_card.dart';
 import '../models/news_article.dart';
+import 'health_tips_content.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -170,7 +171,7 @@ class _NewsPageState extends State<NewsPage> {
 
           const Divider(height: 1, color: Color(0xFFE5E7EB)),
 
-          // Main Content Area (News Cards will go here)
+          // Main Content Area
           Expanded(
             child: _selectedCategoryIndex == 0
                 ? SingleChildScrollView(
@@ -228,11 +229,13 @@ class _NewsPageState extends State<NewsPage> {
                       ],
                     ),
                   )
-                : Center(
-                    child: Text(
-                      '${_categories[_selectedCategoryIndex].replaceAll('\n', ' ')} Content Here',
-                    ),
-                  ),
+                : _selectedCategoryIndex == 1
+                    ? const HealthTipsContent()
+                    : Center(
+                        child: Text(
+                          '${_categories[_selectedCategoryIndex].replaceAll('\n', ' ')} Content Here',
+                        ),
+                      ),
           ),
 
           // Bottom Navigation Bar

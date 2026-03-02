@@ -7,6 +7,7 @@ import 'package:figma/pages/news_detail_page.dart';
 import 'package:figma/pages/health_tips_detail_page.dart';
 import 'package:figma/pages/quick_tips_page.dart';
 import 'package:figma/pages/diseases_awareness_detail_page.dart';
+import 'package:figma/pages/alerts_safety_detail_page.dart';
 import 'package:figma/pages/app_preferences_page.dart';
 import 'package:figma/pages/about_caretag_page.dart';
 import 'package:figma/pages/app_settings_page.dart';
@@ -51,6 +52,8 @@ class MyApp extends StatelessWidget {
         QuickTipsPage.routeName: (context) => const QuickTipsPage(),
         DiseasesAwarenessDetailPage.routeName: (context) =>
             const DiseasesAwarenessDetailPage(),
+        AlertsSafetyDetailPage.routeName: (context) =>
+            const AlertsSafetyDetailPage(),
         AppPreferencesPage.routeName: (context) => const AppPreferencesPage(),
         AboutCareTagPage.routeName: (context) => const AboutCareTagPage(),
         AppSettingsPage.routeName: (context) => const AppSettingsPage(),

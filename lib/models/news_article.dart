@@ -261,3 +261,79 @@ final List<NewsArticle> healthTipsArticles = [
         'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop',
   ),
 ];
+
+// Alerts & Safety Tab Articles
+final List<NewsArticle> alertsArticles = [
+  const NewsArticle(
+    id: 'as1',
+    category: 'HIGH PRIORITY',
+    title: 'Seasonal Flu Advisory',
+    subtitle: 'Local health authorities report a 45% spike in influenza cases.',
+    author: 'CareTag Health Alerts',
+    timeAgo: '2h ago',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&auto=format&fit=crop',
+    isFeatured: true,
+  ),
+  const NewsArticle(
+    id: 'as2',
+    category: 'URGENT RECALL',
+    title: 'Product Recall: Histamine-Block Allergy Meds',
+    subtitle:
+        'Batch #4029-X contains potential contaminants. Do not consume. Return to pharmacy for full refund.',
+    author: 'PharmaCare Inc.',
+    timeAgo: '5h ago',
+    readTime: '2 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'as3',
+    category: 'FOOD SAFETY',
+    title: 'Romaine Lettuce Alert',
+    subtitle:
+        'Multi-state salmonella outbreak linked to specific distributors.',
+    author: 'FDA Food Safety',
+    timeAgo: '2h ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'as4',
+    category: 'PROTOCOL UPDATE',
+    title: 'New Vaccination Protocols for Adults (Age 50+)',
+    subtitle:
+        'CDC has updated guidelines regarding shingles and pneumonia vaccines.',
+    author: 'Dr. Sarah Jenks',
+    timeAgo: '3h ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'as5',
+    category: 'FIRST AID',
+    title: 'First Aid: Handling Heatstroke',
+    subtitle:
+        'Heatstroke is a life-threatening emergency. Take immediate action.',
+    author: 'CareTag First Aid',
+    timeAgo: '2m ago',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'as6',
+    category: 'HOME SAFETY',
+    title: 'Home Safety: Winter Fire Prevention',
+    subtitle:
+        'Space heaters account for 43% of home heating fires. Stay safe this season.',
+    author: 'CareTag Safety',
+    timeAgo: '1d ago',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop',
+  ),
+];

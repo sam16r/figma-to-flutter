@@ -303,6 +303,90 @@ final List<NewsArticle> mentalWellnessArticles = [
   ),
 ];
 
+// Medicines & Treatments Tab Articles
+final List<NewsArticle> medicinesArticles = [
+  const NewsArticle(
+    id: 'mt1',
+    category: 'BREAKTHROUGH',
+    title: 'Breakthrough in Heart Valve Therapy',
+    subtitle:
+        'A revolutionary minimally invasive procedure offers new hope for patients previously.',
+    author: 'Dr. Sarah Johnson',
+    timeAgo: '2 hrs ago',
+    readTime: '6 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=800&auto=format&fit=crop',
+    isFeatured: true,
+  ),
+  const NewsArticle(
+    id: 'mt2',
+    category: 'RESEARCH',
+    title: 'Managing Diabetes: New Oral Insulin trials show promise',
+    subtitle: 'Phase 3 trials indicate efficacy comparable to injections.',
+    author: 'CareTag Research',
+    timeAgo: '4 min read',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mt3',
+    category: 'GUIDE',
+    title: 'Physical Therapy for Lower Back Pain',
+    subtitle:
+        'A step-by-step illustrated recovery guide focusing on core strengthening and flexibility.',
+    author: 'CareTag Specialists',
+    timeAgo: '12 min read',
+    readTime: '12 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mt4',
+    category: 'SAFETY FIRST',
+    title: "Common Antibiotics: Dos and Don'ts",
+    subtitle: 'Key guidelines for safe and effective antibiotic use.',
+    author: 'CareTag Safety',
+    timeAgo: '3 min read',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mt5',
+    category: 'TECH',
+    title: 'Robotic Surgery',
+    subtitle: 'High-precision minimally invasive techniques.',
+    author: 'CareTag Tech',
+    timeAgo: '5 min read',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mt6',
+    category: 'GENETICS',
+    title: 'Gene Therapy',
+    subtitle: 'Targeted treatments for hereditary conditions.',
+    author: 'CareTag Science',
+    timeAgo: '7 min read',
+    readTime: '7 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'mt7',
+    category: 'IoT',
+    title: 'Smart Implants: Health Monitoring from the Inside',
+    subtitle: 'Real-time vitals monitoring from within.',
+    author: 'Dr. Julian Vance',
+    timeAgo: '6 min read',
+    readTime: '6 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
+  ),
+];
+
 // Alerts & Safety Tab Articles
 final List<NewsArticle> alertsArticles = [
   const NewsArticle(

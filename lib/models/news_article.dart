@@ -512,6 +512,120 @@ final List<NewsArticle> techArticles = [
   ),
 ];
 
+// Fitness & Nutrition Tab Articles
+final List<NewsArticle> fitArticles = [
+  const NewsArticle(
+    id: 'fit1',
+    category: 'FITNESS',
+    title: '5 Home Cardio Exercises for Longevity',
+    subtitle: 'No equipment needed. Strengthen your heart and boost energy.',
+    author: 'Dr. Ray',
+    timeAgo: '4 min read',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit2',
+    category: 'WELLNESS GUIDE',
+    title: 'Master Your Office Posture',
+    subtitle: 'A 4-step checklist to align your spine and boost your energy.',
+    author: 'CareTag Wellness',
+    timeAgo: '3 min read',
+    readTime: '3 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit3',
+    category: 'NUTRITION GUIDE',
+    title: 'Fiber Facts: The Unsung Hero of Digestion',
+    subtitle: 'Regulate blood sugar, lower cholesterol, and feel full longer.',
+    author: 'Dr. Sarah Jones, Gastroenterologist',
+    timeAgo: '5 min read',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1490885578174-acda8905c2c6?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit4',
+    category: 'PLANT BASED',
+    title: 'Vegan Protein Sources: A Complete Guide',
+    subtitle: 'Fuel your body with plants — no performance sacrifice.',
+    author: 'Dr. Lisa Wong, RD',
+    timeAgo: '4 min read',
+    readTime: '4 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit5',
+    category: 'RECIPE',
+    title: 'Quinoa & Avocado Salad',
+    subtitle: '420 kcal • 20 min • Easy — heart-healthy and delicious.',
+    author: 'CareTag Kitchen',
+    timeAgo: '2 min read',
+    readTime: '2 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit6',
+    category: 'RECIPE',
+    title: 'Green Smoothie Bowl',
+    subtitle: '320 kcal • 10 min • Easy — nutrient-dense morning fuel.',
+    author: 'CareTag Kitchen',
+    timeAgo: '2 min read',
+    readTime: '2 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1490885578174-acda8905c2c6?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit7',
+    category: 'WORKOUT SCIENCE',
+    title: 'HIIT: The Science of Efficient Cardio',
+    subtitle: 'How EPOC keeps burning calories 24h after your workout.',
+    author: 'Dr. Ray, Sports Medicine',
+    timeAgo: '5 min read',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit8',
+    category: 'BUDGET FITNESS',
+    title: 'Building Muscle on a Budget',
+    subtitle: 'Smart grocery choices and bodyweight leverage for real results.',
+    author: 'Dr. Ray, Sports Medicine',
+    timeAgo: '6 min read',
+    readTime: '6 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit9',
+    category: 'MEDICAL',
+    title: 'The Gut-Brain Connection',
+    subtitle: 'How your gut\'s 100M neurons shape mood, digestion, and stress.',
+    author: 'Dr. Lisa Wong, RD',
+    timeAgo: '5 min read',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1576319155264-99536e0be1ee?w=800&auto=format&fit=crop',
+  ),
+  const NewsArticle(
+    id: 'fit10',
+    category: 'RESEARCH',
+    title: 'Intermittent Fasting: Clinical Benefits & Risks',
+    subtitle: 'Peer-reviewed findings on 16:8 protocols and metabolic health.',
+    author: 'Dr. Lisa Wong, RD',
+    timeAgo: '2h ago',
+    readTime: '5 min read',
+    imageUrl:
+        'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop',
+  ),
+];
+
 // Alerts & Safety Tab Articles
 final List<NewsArticle> alertsArticles = [
   const NewsArticle(

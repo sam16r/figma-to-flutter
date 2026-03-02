@@ -8,6 +8,7 @@ import 'alerts_safety_content.dart';
 import 'mental_wellness_content.dart';
 import 'medicines_treatments_content.dart';
 import 'medical_technology_content.dart';
+import 'fitness_nutrition_content.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -240,7 +241,9 @@ class _NewsPageState extends State<NewsPage> {
                         ? const DiseasesAwarenessContent()
                         : _selectedCategoryIndex == 3
                             ? const MedicinesTreatmentsContent()
-                            : _selectedCategoryIndex == 7
+                            : _selectedCategoryIndex == 4
+                                ? const FitnessNutritionContent()
+                                : _selectedCategoryIndex == 7
                                 ? const AlertsSafetyContent()
                                 : _selectedCategoryIndex == 5
                                     ? const MentalWellnessContent()

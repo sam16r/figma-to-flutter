@@ -17,6 +17,8 @@ import 'package:figma/pages/medical_technology_detail_page.dart';
 import 'package:figma/pages/caretag_pro_page.dart';
 import 'package:figma/pages/cgm_device_page.dart';
 import 'package:figma/pages/beta_lab_page.dart';
+import 'package:figma/pages/fitness_nutrition_detail_page.dart';
+import 'package:figma/pages/seven_day_meal_plan_page.dart';
 import 'package:figma/pages/app_preferences_page.dart';
 import 'package:figma/pages/about_caretag_page.dart';
 import 'package:figma/pages/app_settings_page.dart';
@@ -76,6 +78,10 @@ class MyApp extends StatelessWidget {
         CareTagProPage.routeName: (context) => const CareTagProPage(),
         CgmDevicePage.routeName: (context) => const CgmDevicePage(),
         BetaLabPage.routeName: (context) => const BetaLabPage(),
+        FitnessNutritionDetailPage.routeName: (context) =>
+            const FitnessNutritionDetailPage(),
+        SevenDayMealPlanPage.routeName: (context) =>
+            const SevenDayMealPlanPage(),
         AppPreferencesPage.routeName: (context) => const AppPreferencesPage(),
         AboutCareTagPage.routeName: (context) => const AboutCareTagPage(),
         AppSettingsPage.routeName: (context) => const AppSettingsPage(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'my_care_home_content.dart';
 import 'my_care_caretag_content.dart';
+import 'my_care_care_services_content.dart';
 import 'my_care_insurance_content.dart';
 import 'my_care_timeline_content.dart';
 
@@ -167,7 +168,9 @@ class _MyCarePageState extends State<MyCarePage> {
                 ? const MyCareHomeContent()
                 : _selectedTabIndex == 1
                     ? const MyCareCareTgContent()
-                    : _selectedTabIndex == 4
+                    : _selectedTabIndex == 3
+                        ? const MyCareCareServicesContent()
+                        : _selectedTabIndex == 4
                         ? const MyCareInsuranceContent()
                         : _selectedTabIndex == 5
                             ? const MyCareTimelineContent()

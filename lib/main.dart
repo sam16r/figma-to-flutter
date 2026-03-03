@@ -34,6 +34,8 @@ import 'package:figma/pages/payment_methods_page.dart';
 import 'package:figma/pages/add_card_page.dart';
 import 'package:figma/pages/privacy_policy_page.dart';
 import 'package:figma/pages/terms_conditions_page.dart';
+import 'package:figma/pages/my_care_page.dart';
+import 'package:figma/pages/quick_actions_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -99,6 +101,8 @@ class MyApp extends StatelessWidget {
         AddCardPage.routeName: (context) => const AddCardPage(),
         PrivacyPolicyPage.routeName: (context) => const PrivacyPolicyPage(),
         TermsConditionsPage.routeName: (context) => const TermsConditionsPage(),
+        MyCarePage.routeName: (context) => const MyCarePage(),
+        QuickActionsPage.routeName: (context) => const QuickActionsPage(),
       },
     );
   }

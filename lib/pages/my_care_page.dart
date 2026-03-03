@@ -1,44 +1,34 @@
 import 'package:flutter/material.dart';
-import '../widgets/featured_news_card.dart';
-import '../widgets/news_card.dart';
-import '../models/news_article.dart';
-import 'health_tips_content.dart';
-import 'diseases_awareness_content.dart';
-import 'alerts_safety_content.dart';
-import 'mental_wellness_content.dart';
-import 'medicines_treatments_content.dart';
-import 'medical_technology_content.dart';
-import 'fitness_nutrition_content.dart';
+import 'my_care_home_content.dart';
 
-class NewsPage extends StatefulWidget {
-  const NewsPage({super.key});
+class MyCarePage extends StatefulWidget {
+  const MyCarePage({super.key});
 
-  static const routeName = '/news';
+  static const routeName = '/my-care';
 
   @override
-  State<NewsPage> createState() => _NewsPageState();
+  State<MyCarePage> createState() => _MyCarePageState();
 }
 
-class _NewsPageState extends State<NewsPage> {
-  int _selectedCategoryIndex = 0;
+class _MyCarePageState extends State<MyCarePage> {
+  int _selectedTabIndex = 0;
 
-  final List<String> _categories = [
+  final List<String> _tabs = [
     'Home',
-    'Health\nTips',
-    'Diseases\n& Awareness',
-    'Medicines\n& Treatments',
-    'Fitness\n& Nutrition',
-    'Mental\nWellness',
-    'Medical\nTechnology',
-    'Alerts\n& Safety',
+    'CareTag',
+    'Doctors',
+    'Care\nServices',
+    'Insurance',
+    'Timeline',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF9FAFB),
       body: Column(
         children: [
-          // Header section
+          // Blue curved header + search bar
           SizedBox(
             height: 180,
             child: Stack(
@@ -48,7 +38,7 @@ class _NewsPageState extends State<NewsPage> {
                   height: 150,
                   width: double.infinity,
                   decoration: const BoxDecoration(
-                    color: Color(0xFF3B82F6), // Blue background
+                    color: Color(0xFF3B82F6),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.elliptical(280, 100),
                       bottomRight: Radius.elliptical(280, 100),
@@ -60,7 +50,7 @@ class _NewsPageState extends State<NewsPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: const Text(
-                          'Health News',
+                          'My Care',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
@@ -71,7 +61,7 @@ class _NewsPageState extends State<NewsPage> {
                     ),
                   ),
                 ),
-                // Search Bar overlay
+                // Search bar overlay
                 Positioned(
                   bottom: 10,
                   left: 20,
@@ -87,32 +77,27 @@ class _NewsPageState extends State<NewsPage> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 4),
                         ),
                       ],
                     ),
-                    child: TextField(
+                    child: const TextField(
                       decoration: InputDecoration(
                         hintText: 'Search',
-                        hintStyle: const TextStyle(
+                        hintStyle: TextStyle(
                           color: Color(0xFF9CA3AF),
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                         ),
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.search,
                           color: Color(0xFF111827),
                         ),
-                        suffixIcon: const Icon(
-                          Icons.tune, // Filter icon
-                          color: Color(0xFF3B82F6),
-                        ),
+                        suffixIcon: Icon(Icons.tune, color: Color(0xFF3B82F6)),
                         border: InputBorder.none,
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 12,
-                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 12),
                       ),
                     ),
                   ),
@@ -123,23 +108,19 @@ class _NewsPageState extends State<NewsPage> {
 
           const SizedBox(height: 12),
 
-          // Horizontal Scrollable Navbar
+          // Horizontal scrollable nav bar
           SizedBox(
             height: 50,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: _categories.length,
+              itemCount: _tabs.length,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               itemBuilder: (context, index) {
-                final isSelected = _selectedCategoryIndex == index;
+                final isSelected = _selectedTabIndex == index;
                 final isHome = index == 0;
 
                 return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _selectedCategoryIndex = index;
-                    });
-                  },
+                  onTap: () => setState(() => _selectedTabIndex = index),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -147,7 +128,7 @@ class _NewsPageState extends State<NewsPage> {
                         margin: EdgeInsets.only(right: isHome ? 12 : 24),
                         alignment: Alignment.center,
                         child: Text(
-                          _categories[index],
+                          _tabs[index],
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: isHome ? 16 : 13,
@@ -177,96 +158,31 @@ class _NewsPageState extends State<NewsPage> {
 
           const Divider(height: 1, color: Color(0xFFE5E7EB)),
 
-          // Main Content Area
+          // Content area
           Expanded(
-            child: _selectedCategoryIndex == 0
-                ? SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Featured Section
-                        FeaturedNewsCard(
-                          article: dummyNewsArticles.firstWhere(
-                            (a) => a.isFeatured,
-                          ),
-                          onTap: () {
-                            Navigator.pushNamed(
-                              context,
-                              '/news-detail',
-                              arguments: {
-                                'article': dummyNewsArticles.firstWhere(
-                                  (a) => a.isFeatured,
-                                ),
-                              },
-                            );
-                          },
-                        ),
-
-                        // Latest Updates Title
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(20, 16, 20, 8),
-                          child: Text(
-                            'Latest Updates',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w800,
-                              color: Color(0xFF111827),
-                            ),
-                          ),
-                        ),
-
-                        // Other News Items
-                        ...dummyNewsArticles
-                            .where((a) => !a.isFeatured)
-                            .map(
-                              (article) => NewsCard(
-                                article: article,
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    '/news-detail',
-                                    arguments: {'article': article},
-                                  );
-                                },
-                              ),
-                            ),
-
-                        const SizedBox(height: 20),
-                      ],
-                    ),
-                  )
-                : _selectedCategoryIndex == 1
-                    ? const HealthTipsContent()
-                    : _selectedCategoryIndex == 2
-                        ? const DiseasesAwarenessContent()
-                        : _selectedCategoryIndex == 3
-                            ? const MedicinesTreatmentsContent()
-                            : _selectedCategoryIndex == 4
-                                ? const FitnessNutritionContent()
-                                : _selectedCategoryIndex == 7
-                                ? const AlertsSafetyContent()
-                                : _selectedCategoryIndex == 5
-                                    ? const MentalWellnessContent()
-                                    : _selectedCategoryIndex == 6
-                                        ? const MedicalTechnologyContent()
-                                        : Center(
-                        child: Text(
-                          '${_categories[_selectedCategoryIndex].replaceAll('\n', ' ')} Content Here',
-                        ),
+            child: _selectedTabIndex == 0
+                ? const MyCareHomeContent()
+                : Center(
+                    child: Text(
+                      '${_tabs[_selectedTabIndex].replaceAll('\n', ' ')} Content Here',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF6B7280),
                       ),
+                    ),
+                  ),
           ),
 
-          // Bottom Navigation Bar
-          const _BottomNavBar(),
+          // Bottom nav bar
+          const _MyCareBottomNav(),
         ],
       ),
     );
   }
 }
 
-// Reused from profile_page.dart to ensure consistency
-class _BottomNavBar extends StatelessWidget {
-  const _BottomNavBar();
+class _MyCareBottomNav extends StatelessWidget {
+  const _MyCareBottomNav();
 
   @override
   Widget build(BuildContext context) {
@@ -285,12 +201,16 @@ class _BottomNavBar extends StatelessWidget {
             onTap: () => Navigator.pushReplacementNamed(context, '/'),
           ),
           const _NavItem(icon: Icons.assignment_outlined, label: 'Records'),
-          _NavItem(
+          const _NavItem(
             icon: Icons.account_balance_outlined,
             label: 'My Care',
-            onTap: () => Navigator.pushReplacementNamed(context, '/my-care'),
+            active: true,
           ),
-          _NavItem(icon: Icons.description, label: 'News', active: true),
+          _NavItem(
+            icon: Icons.description,
+            label: 'News',
+            onTap: () => Navigator.pushReplacementNamed(context, '/news'),
+          ),
           _NavItem(
             icon: Icons.person_outline,
             label: 'Profile',

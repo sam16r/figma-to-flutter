@@ -394,14 +394,18 @@ class _BottomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _NavItem(
-            icon: Icons.home_outlined, 
+            icon: Icons.home_outlined,
             label: 'Home',
             onTap: () => Navigator.pushReplacementNamed(context, '/'),
           ),
-          _NavItem(icon: Icons.assignment_outlined, label: 'Records'),
-          _NavItem(icon: Icons.account_balance_outlined, label: 'My Care'),
+          const _NavItem(icon: Icons.assignment_outlined, label: 'Records'),
           _NavItem(
-            icon: Icons.description_outlined, 
+            icon: Icons.account_balance_outlined,
+            label: 'My Care',
+            onTap: () => Navigator.pushReplacementNamed(context, '/my-care'),
+          ),
+          _NavItem(
+            icon: Icons.description_outlined,
             label: 'News',
             onTap: () => Navigator.pushReplacementNamed(context, '/news'),
           ),

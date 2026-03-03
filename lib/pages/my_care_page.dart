@@ -4,6 +4,7 @@ import 'my_care_caretag_content.dart';
 import 'my_care_care_services_content.dart';
 import 'my_care_insurance_content.dart';
 import 'my_care_timeline_content.dart';
+import 'my_care_doctors_content.dart';
 
 class MyCarePage extends StatefulWidget {
   const MyCarePage({super.key});
@@ -168,7 +169,9 @@ class _MyCarePageState extends State<MyCarePage> {
                 ? const MyCareHomeContent()
                 : _selectedTabIndex == 1
                     ? const MyCareCareTgContent()
-                    : _selectedTabIndex == 3
+                    : _selectedTabIndex == 2
+                        ? const MyCareDoctorsContent()
+                        : _selectedTabIndex == 3
                         ? const MyCareCareServicesContent()
                         : _selectedTabIndex == 4
                         ? const MyCareInsuranceContent()

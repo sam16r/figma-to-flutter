@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'my_care_home_content.dart';
+import 'my_care_caretag_content.dart';
 
 class MyCarePage extends StatefulWidget {
   const MyCarePage({super.key});
@@ -162,7 +163,9 @@ class _MyCarePageState extends State<MyCarePage> {
           Expanded(
             child: _selectedTabIndex == 0
                 ? const MyCareHomeContent()
-                : Center(
+                : _selectedTabIndex == 1
+                    ? const MyCareCareTgContent()
+                    : Center(
                     child: Text(
                       '${_tabs[_selectedTabIndex].replaceAll('\n', ' ')} Content Here',
                       style: const TextStyle(
